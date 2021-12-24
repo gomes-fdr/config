@@ -34,6 +34,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 set mouse=a
+set wrap linebreak nolist
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
