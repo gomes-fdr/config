@@ -7,6 +7,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 let g:move_key_modifier = 'C' " change to CRTL + [j | k] to move line
