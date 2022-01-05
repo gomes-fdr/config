@@ -8,6 +8,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'miyakogi/conoline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:move_key_modifier = 'C'  " change to CRTL + [j | k] to move line
@@ -28,7 +30,7 @@ set hlsearch                " highlight matches
 set foldenable              " enable folding
 set foldlevelstart=10       " open most folds by default
 set foldnestmax=10          " 10 nested fold max
-set colorcolumn=100         " show right margin"
+set colorcolumn=120         " show right margin"
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
