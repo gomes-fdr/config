@@ -7,14 +7,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
-Plug 'miyakogi/conoline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
 call plug#end()
 
 let g:move_key_modifier = 'C'  " change to CRTL + [j | k] to move line
-let g:conoline_auto_enable = 1 " turn on hiligth plugin line
 
 syntax enable               " enable syntax processing
 filetype indent on          " load filetype-specific indent files
