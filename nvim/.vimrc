@@ -38,6 +38,8 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 set mouse=a
+set clipboard=unnamedplus
+set nocompatible
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -55,5 +57,7 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+" To be able to use crtl+c to copy a system clipboard
+vmap <C-c> "+y
 
 
