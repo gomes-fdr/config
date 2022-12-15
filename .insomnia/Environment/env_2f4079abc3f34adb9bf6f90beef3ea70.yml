@@ -1,0 +1,18 @@
+_id: env_2f4079abc3f34adb9bf6f90beef3ea70
+type: Environment
+parentId: env_b34128cf1cda455fa5bee6b2346c994ad226e855
+modified: 1671100871810
+created: 1671100445007
+name: local
+data:
+  token: ""
+  base_path_token: http://localhost:9999/api
+  base_path: http://localhost:8080/api
+dataPropertyOrder:
+  "&":
+    - token
+    - base_path_token
+    - base_path
+color: null
+isPrivate: false
+metaSortKey: 1671100445007
