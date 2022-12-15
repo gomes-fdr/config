@@ -1,0 +1,33 @@
+_id: req_310b38f0e193423ea002cb86195527cd
+type: Request
+parentId: wrk_6cd386e2331045c1aba746646ee911ae
+modified: 1671101098484
+created: 1671018052591
+url: "{{ _.base_path_token }}/tokens"
+name: token
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_930c2d4c656347d7bd203c93d61bea0a
+    name: Accept
+    value: application/json
+    description: ""
+  - id: pair_8e8de218440049c9b8b6987ee94d536b
+    name: Accept
+    value: version=3
+    description: ""
+  - id: pair_51b44e08f2f14c32a09db0cca04b1524
+    name: Authorization
+    value: ""
+    description: ""
+authentication: {}
+metaSortKey: -1671018052591
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
