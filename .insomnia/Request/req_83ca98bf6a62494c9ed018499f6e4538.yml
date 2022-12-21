@@ -1,0 +1,29 @@
+_id: req_83ca98bf6a62494c9ed018499f6e4538
+type: Request
+parentId: wrk_6cd386e2331045c1aba746646ee911ae
+modified: 1671623965350
+created: 1671123229562
+url: "{{ _.base_path }}/edge_functions"
+name: edge_functions
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_da7da24573d144fc81d814b71a7c398a
+    name: Accept
+    value: application/json; version=3
+    description: ""
+  - id: pair_d04b88c8965246aa8be4d470dd62124d
+    name: Authorization
+    value: Token {{ _.token }}
+    description: ""
+authentication: {}
+metaSortKey: -1671123229562
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

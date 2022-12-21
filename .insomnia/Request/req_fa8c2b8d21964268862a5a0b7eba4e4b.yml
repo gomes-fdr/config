@@ -1,0 +1,38 @@
+_id: req_fa8c2b8d21964268862a5a0b7eba4e4b
+type: Request
+parentId: wrk_6cd386e2331045c1aba746646ee911ae
+modified: 1671471836211
+created: 1671124634669
+url: "{{ _.base_path }}/edge_functions/13916"
+name: edge_functions
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Function Test API",
+    	"initiator_type": "edge_firewall"
+    }
+parameters: []
+headers:
+  - id: pair_da7da24573d144fc81d814b71a7c398a
+    name: Accept
+    value: application/json; version=3
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_e13d2d570d6248469c05b5ac03a8bac3
+  - id: pair_d04b88c8965246aa8be4d470dd62124d
+    name: Authorization
+    value: Token {{ _.token }}
+    description: ""
+authentication: {}
+metaSortKey: -1671044346833.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

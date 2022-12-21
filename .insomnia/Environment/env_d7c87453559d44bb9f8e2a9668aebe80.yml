@@ -1,0 +1,24 @@
+_id: env_d7c87453559d44bb9f8e2a9668aebe80
+type: Environment
+parentId: env_b34128cf1cda455fa5bee6b2346c994ad226e855
+modified: 1671624091495
+created: 1671470877763
+name: stage
+data:
+  token: 02f0ecbecb0e057065b73199388c15c762a7c373
+  base_path_token: https://stage-api.azion.net
+  base_path: https://stage-api.azion.net
+  user: fabiano.gomes+123@azion.co
+  pass: Bdf121171#
+  encode: ZmFiaWFuby5nb21lcysxMjNAYXppb24uY29tOkJkZjEyMTE3MSMK
+dataPropertyOrder:
+  "&":
+    - token
+    - base_path_token
+    - base_path
+    - user
+    - pass
+    - encode
+color: null
+isPrivate: false
+metaSortKey: 1671100445057

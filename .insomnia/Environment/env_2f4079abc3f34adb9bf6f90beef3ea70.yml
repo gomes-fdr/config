@@ -1,18 +1,27 @@
 _id: env_2f4079abc3f34adb9bf6f90beef3ea70
 type: Environment
 parentId: env_b34128cf1cda455fa5bee6b2346c994ad226e855
-modified: 1671100871810
+modified: 1671624111492
 created: 1671100445007
 name: local
 data:
-  token: ""
+  token: c32fc5010734eb236ced7fef4221b42634a482c7
+  token2: "{% response 'body', 'req_310b38f0e193423ea002cb86195527cd',
+    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
   base_path_token: http://localhost:9999/api
   base_path: http://localhost:8080/api
+  user: services@azion.com
+  pass: aaa123
+  encode: c2VydmljZXNAYXppb24uY29tOmFhYTEyMwo=
 dataPropertyOrder:
   "&":
     - token
+    - token2
     - base_path_token
     - base_path
+    - user
+    - pass
+    - encode
 color: null
 isPrivate: false
 metaSortKey: 1671100445007
