@@ -1,6 +1,4 @@
-" Don't put anything in your .vimrc you don't understand
-
-" Load plugins here
+"" Load plugins here
 call plug#begin()
 Plug 'matze/vim-move'
 Plug 'Raimondi/delimitMate'
@@ -14,36 +12,14 @@ Plug 'pseewald/vim-anyfold'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
 
-let g:move_key_modifier = 'C'  " change to CRTL + [j | k] to move line
-let g:conoline_auto_enable = 1 " turn on hiligth plugin line
+" change to CRTL + [j | k] to move line
+let g:move_key_modifier = 'C'
 
-syntax enable               " enable syntax processing
-filetype indent on          " load filetype-specific indent files
-set tabstop=4               " number of visual spaces per TAB
-set softtabstop=4           " number of spaces in tab when editing
-set expandtab               " tabs are spaces
-set number                  " show line numbers
-set showcmd                 " show command in bottom bar
-set wildmenu                " visual autocomplete for command menu
-set lazyredraw              " redraw only when we need to.
-set showmatch               " highlight matching [{()}]
-set incsearch               " search as characters are entered
-set hlsearch                " highlight matches
-set foldenable              " enable folding
-set foldlevelstart=10       " open most folds by default
-set foldnestmax=10          " 10 nested fold max
-set colorcolumn=120         " show right margin"
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
-set mouse=a
+" turn on hiligth plugin line
+let g:conoline_auto_enable = 1
 
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-let mapleader=","       " leader is comma
+" leader is comma
+let mapleader=","
 noremap <leader>/ :Commentary<cr>
 
 "crtl-p stuff
@@ -56,32 +32,178 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-
-" handle tabs as 4 spaces, in every direction, consintently
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set softtabstop=4
-
 " remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-filetype plugin indent on " required
-" syntax on                 " required
-
-autocmd Filetype * AnyFoldActivate               " activate for all filetypes
-" or
-" autocmd Filetype <your-filetype> AnyFoldActivate " activate for a specific
-" filetype
-"
-" set foldlevel=0  " close all folds
-" " or
-" set foldlevel=99 " Open all folds
-
 
 " Configuration example
 let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
+
+" -----------------------------------------------------------------------------
+if has('termguicolors')
+    set termguicolors
+else
+    set t_Co=256
+endif
+" -----------------------------------------------------------------------------
+filetype plugin indent on
+syntax on
+set title
+set encoding=utf-8
+set backspace=indent,eol,start
+set noerrorbells
+set confirm
+set hidden
+set splitbelow
+set splitright
+set fillchars=vert:│,fold:-,eob:~,lastline:@
+" -----------------------------------------------------------------------------
+set path=.,**
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+" -----------------------------------------------------------------------------
+set nowrap
+set linebreak
+set nolist
+set listchars=tab:›-,space:·,trail:◀,eol:↲
+" -----------------------------------------------------------------------------
+set number
+set relativenumber
+set scrolloff=2
+set cursorline
+" -----------------------------------------------------------------------------
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+" -----------------------------------------------------------------------------
+set autoindent
+set smartindent
+" -----------------------------------------------------------------------------
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" -----------------------------------------------------------------------------
+set ignorecase
+set smartcase
+set incsearch
+set hls
+let @/ = ""
+" -----------------------------------------------------------------------------
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
+
+set spelllang=pt_br,en
+set nospell
+
+" Insert completion...
+
+" -- Select with arrows up and down --
+inoremap <expr> <up> pumvisible() ? '<c-p>' : '<up>'
+inoremap <expr> <down> pumvisible() ? '<c-n>' : '<down>'
+
+" -- Accept with right arrow or enter --
+inoremap <expr> <right> pumvisible() ? '<c-y>' : '<right>'
+inoremap <expr> <cr> pumvisible() ? '<c-y>' : '<cr>'
+
+" -- Cancel completion with left arrow --
+inoremap <expr> <left> pumvisible() ? '<c-e>' : '<left>'
+
+function! Hashbangs()
+    let hb = ['#!/bin/bash', '#!/usr/bin/env bash', '#!/bin/sh', '#!/usr/bin/awk -f']
+    call complete(col('.'), hb)
+    return ''
+endfunction
+
+imap <c-x>h <c-r>=Hashbangs()<cr>
+" -----------------------------------------------------------------------------
+set wildmenu
+set wildmode=longest,full
+set wildoptions=pum
+" -----------------------------------------------------------------------------
+" https://github.com/sainnhe/edge.git
+" set background=dark
+" colorscheme edge
+" -----------------------------------------------------------------------------
+colorscheme habamax
+" -----------------------------------------------------------------------------
+set noshowmode
+set laststatus=2
+
+hi statusline   cterm=NONE ctermfg=0 ctermbg=7   guibg=#C1C2D0 guifg=#000000
+hi statuslinenc cterm=NONE ctermfg=0 ctermbg=240 guibg=#616270 guifg=#000000
+
+augroup ModeEvents
+    autocmd!
+    au InsertEnter * hi statusline cterm=NONE ctermfg=0 ctermbg=10 guibg=#7BC86F
+    au InsertLeave * hi statusline cterm=NONE ctermfg=0 ctermbg=7 guibg=#C1C2D0
+    au ModeChanged *:[vV\x16]* hi statusline cterm=NONE ctermfg=0 ctermbg=13 guibg=#C990DC
+    au Modechanged [vV\x16]*:* hi statusline cterm=NONE ctermfg=0 ctermbg=7 guibg=#C1C2D0
+augroup end
+
+function! LoadStatusLine()
+
+    let g:left_sep='│'
+    let g:right_sep='│'
+
+    let g:currentmode={
+        \ 'n'  : 'Normal',
+        \ 'no' : 'Normal-Operator Pending',
+        \ 'v'  : 'Visual',
+        \ 'V'  : 'V-Line',
+        \ 's'  : 'Select',
+        \ 'S'  : 'S-Line',
+        \ '' : 'S-Block',
+        \ 'i'  : 'Insert',
+        \ 'R'  : 'Replace',
+        \ 'Rv' : 'V-Replace',
+        \ 'c'  : 'Command',
+        \ 'cv' : 'Vim Ex',
+        \ 'ce' : 'Ex',
+        \ 'r'  : 'Prompt',
+        \ 'rm' : 'More',
+        \ 'r?' : 'Confirm',
+        \ '!'  : 'Shell',
+        \ 't'  : 'Terminal'
+        \}
+
+    set statusline=\ %{toupper(g:currentmode[mode()])}
+    " set statusline=\ %{toupper(mode())}
+    set statusline+=\ %{left_sep}
+    set statusline+=\ %n
+    set statusline+=\ %{left_sep}
+    set statusline+=\ %f%m\ %y
+    set statusline+=\ %{left_sep}
+    set statusline+=\ %{&ff}\ %{&fenc!=''?&fenc:&enc}
+    set statusline+=\ %{left_sep}
+    set statusline+=\ %=
+    set statusline+=\ %{right_sep}
+    set statusline+=\ %l/%L,%v
+    set statusline+=\ %{right_sep}
+    set statusline+=\ %P\
+
+endfunction
+
+call LoadStatusLine()
+
+" -----------------------------------------------------------------------------
+hi Normal guibg=NONE ctermbg=NONE
+
+hi CursorLine guibg=#202130
+
+hi Comment cterm=italic gui=italic
+
+hi VertSplit ctermbg=NONE guibg=NONE ctermfg=7 guifg=#c1c2d0
+
+hi TabLine      guifg=#9192a0 guibg=#303140 gui=none
+hi TabLineSel   guifg=#a1a2b0 guibg=#101120 gui=bold
+hi TabLineFill  guifg=#9192a0 guibg=#303140 gui=none
+
+hi Visual guifg=NONE guibg=#303140
+
+
+
