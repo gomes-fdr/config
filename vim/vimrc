@@ -5,11 +5,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
-Plug 'miyakogi/conoline.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'pseewald/vim-anyfold'
 Plug 'voldikss/vim-floaterm'
+Plug 'mboughaba/vim-lessmess'
 call plug#end()
 
 " change to CRTL + [j | k] to move line
@@ -68,7 +65,8 @@ set undofile
 " -----------------------------------------------------------------------------
 set nowrap
 set linebreak
-set nolist
+" set nolist
+set list
 set listchars=tab:›-,space:·,trail:◀,eol:↲
 " -----------------------------------------------------------------------------
 set number
