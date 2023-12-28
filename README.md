@@ -2,6 +2,6 @@
 
 My config stuff, here a put the 'things' that a usull use n daylly dev routine.
 
- * helix editor
+ * ~helix editor~ vim
  * tmux
 
