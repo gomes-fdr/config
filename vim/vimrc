@@ -8,6 +8,7 @@ Plug 'tpope/vim-commentary'
 Plug 'voldikss/vim-floaterm'
 Plug 'mboughaba/vim-lessmess'
 Plug 'tpope/vim-vinegar'
+Plug 'zivyangll/git-blame.vim'
 call plug#end()
 
 " change to CRTL + [j | k] to move line
@@ -207,3 +208,5 @@ hi Visual guifg=NONE guibg=#303140
 
 " to hidde hidden files, toggle gh
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
