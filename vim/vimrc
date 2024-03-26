@@ -7,6 +7,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'voldikss/vim-floaterm'
 Plug 'mboughaba/vim-lessmess'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 " change to CRTL + [j | k] to move line
@@ -204,5 +205,5 @@ hi TabLineFill  guifg=#9192a0 guibg=#303140 gui=none
 hi Visual guifg=NONE guibg=#303140
 
 
-
-
+" to hidde hidden files, toggle gh
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
